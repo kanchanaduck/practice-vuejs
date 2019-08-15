@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <ol>
+            <li v-for="u in universities">
+                {{ u.name}}
+            </li>
+        </ol>
+    </div>
+
+    <script>
+        
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                universities: [{
+                        id: 1,
+                        name: 'มหาวิทยาลัยอุบลราชธานี'
+                    },
+                    {
+                        id: 2,
+                        name: 'มหาวิทยาลัยขอนแก่น'
+                    },
+                    {
+                        id: 3,
+                        name: 'มหาวิทยาลัยมหาสารคาม'
+                    }
+                ]
+            }
+        });
+        app.universities.push({ id: 4, name: 'มหาวิทยาลัยในฝัน'})
+    </script>
+</body>
+
+</html>

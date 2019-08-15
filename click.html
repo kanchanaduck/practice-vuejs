@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <p>{{ text }}</p>
+        <button v-on:click="reverseText">จัดการข้อความ</button>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                text: 'ทดสอบการทำงาน'
+            },
+            methods: {
+                reverseText: function () {
+                    this.text = this.text.split('').reverse().join('')
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

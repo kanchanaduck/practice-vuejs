@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <button v-on:click="volumn++">เพิ่ม</button>
+        <button v-on:click="volumn--">ลด</button>
+        Volumn {{ volumn }}
+        <button @click="add(1)">เพิ่ม</button>
+        <button v-on:click="sub(1)">ลด</button>
+        <hr />
+        <button v-on:click="add(2)">เพิ่ม (2)</button>
+        <button v-on:click="sub(2)">ลด (2)</button>
+        <hr />
+        <button @dblclick="add(10)">เพิ่ม (10)</button>
+        <button v-on:dblclick="sub(10)">ลด (10)</button>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                volumn: 0
+
+            },
+            methods: {
+                add: function (inc) {
+                    this.volumn += inc;
+                },
+                sub: function (dec) {
+                    this.volumn -= dec;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

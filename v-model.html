@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <p>{{ text }}</p>
+        <input v-model="text">
+        <input value="{{ text }}">
+        <!-- <input v-bind:value="{{ text }}"> -->
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                text: 'สวัสดีชาวโลก'
+            }
+        })
+    </script>
+</body>
+
+</html>
