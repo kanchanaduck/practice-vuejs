@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <input v-model="username">
+        <input v-model="password">
+        <button v-on:click="checkLogin">จัดการข้อความ</button>
+
+    </div>
+
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          username: '',
+          password: '',
+          info: '',
+        },
+        
+        methods: {
+          checkLogin: function () {
+            console.log(this.username+" "+this.password);
+            
+            axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+              .then(function (response) {
+                // handle success
+                console.log(response);
+              })
+              .catch(function (error) {
+                // handle error
+                console.log(error);
+              })
+              .finally(function () {
+                // always executed
+              });
+          }
+        },
+
+
+      })
+    </script>
+</body>
+
+</html>
