@@ -26,8 +26,18 @@
         methods: {
           checkLogin: function () {
             console.log(this.username+" "+this.password);
+
+            axios.post('http://intranet2-hitt/intranet_program/IT/equipment_management/api/getLogin', {
+              username: this.username,
+              password: this.password
+            }).then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            })
             
-            axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+            /* axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
               .then(function (response) {
                 // handle success
                 console.log(response);
@@ -38,7 +48,7 @@
               })
               .finally(function () {
                 // always executed
-              });
+            }); */
           }
         },
 
